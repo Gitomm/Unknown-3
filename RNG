@@ -1,0 +1,17 @@
+using System;
+  class Test
+  {
+    static void Main(string[] args)
+    {
+      Random _r = new Random();
+      Console.WriteLine(_r.Next(0,9999));
+      Console.WriteLine(_r.Next(0,9999));
+      Console.WriteLine(_r.Next(0,9999));
+      Console.WriteLine(_r.Next(0,9999));
+      Console.WriteLine(_r.Next(0,9999));
+      Console.WriteLine(_r.Next(0,9999));
+      Console.WriteLine(_r.Next(0,9999));
+      Console.WriteLine(_r.Next(0,9999));
+      Console.WriteLine(_r.Next(0,9999));
+    }
+  }
