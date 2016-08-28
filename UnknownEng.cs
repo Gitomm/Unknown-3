@@ -56,7 +56,7 @@ namespace UnknownEng
 		}
 	}
 
-	public class temp
+	/*public class temp
 	{
 		public static void Main(string[] args)
 		{
@@ -66,5 +66,5 @@ namespace UnknownEng
 			//r.test();
 			//Console.WriteLine(Controller.run());
 		}
-	}
+	}*/
 }
