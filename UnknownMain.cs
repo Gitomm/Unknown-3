@@ -8,6 +8,13 @@ namespace UnknownMain
 {
     public class UM : Renderer
     {
+
+        public UM()
+        {
+          new Renderer();
+          this.Size = new Size(1080, 810);
+
+        }
         public override void run()
         {
 
