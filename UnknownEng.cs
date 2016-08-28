@@ -23,20 +23,16 @@ namespace UnknownEng
 		private Graphics g;
 		public Renderer()
 		{
-
 			g = this.CreateGraphics();
-			try
-			{
-				tim = new Bitmap("C:/Users/mike/Desktop/Unknown3/photo.bmp");
-				Console.WriteLine("Read Image Sucessfully");
-			}
-			catch (ArgumentException)
-			{
-				Console.WriteLine("Error Reading image");
-			}
+
 		}
 
 		protected override void OnPaint(PaintEventArgs e)
+		{
+			this.run();
+		}
+
+		public virtual void run()
 		{
 			this.test();
 		}
@@ -46,8 +42,17 @@ namespace UnknownEng
 
 			Console.WriteLine("Test start");
 			Graphics g = this.CreateGraphics();
+			try
+			{
+				tim = new Bitmap("photo.bmp");
+				Console.WriteLine("Read Image Sucessfully");
+			}
+			catch (ArgumentException)
+			{
+				Console.WriteLine("Error Reading image");
+			}
 			g.DrawImage(tim, 16, 16);
-			Console.WriteLine("test");
+			Console.WriteLine("Test Succesful");
 		}
 	}
 
