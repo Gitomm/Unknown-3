@@ -68,7 +68,6 @@ namespace UnknownEng
 		public Renderer()
 		{
 			g = this.CreateGraphics();
-
 		}
 
 		protected override void OnPaint(PaintEventArgs e)
