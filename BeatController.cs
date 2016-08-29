@@ -6,6 +6,7 @@ namespace BeatController
   {
     static int a;
     static int b;
+    private static int baseBeatLen = 460;
     //static double Note;
     static void AssignBeat()
     {
@@ -37,7 +38,7 @@ namespace BeatController
         {
           case 1:
           Console.WriteLine("That was a whole-note");
-          Console.Beep(1000, 4000);
+          Console.Beep(1000, baseBeatLen);
           Thread.Sleep(1000);
           //Console.Beep(0,500);
           break;
@@ -45,7 +46,7 @@ namespace BeatController
             for (int i = 0; i < 2; i = i + 1)
             {
               Console.WriteLine("That was a half-note");
-              Console.Beep(1000, 2000);
+              Console.Beep(1000, baseBeatLen/2);
               Thread.Sleep(1000);
               //Console.Beep(0,500);
             }
@@ -54,7 +55,7 @@ namespace BeatController
             for (int i = 0; i < 4; i = i + 1)
             {
               Console.WriteLine("That was a fourth-note");
-              Console.Beep(1000, 1000);
+              Console.Beep(1000, baseBeatLen/4);
               Thread.Sleep(1000);
               //Console.Beep(0,500);
             }
@@ -63,7 +64,7 @@ namespace BeatController
             for (int i = 0; i < 4; i = i + 1)
             {
               Console.WriteLine("That was an eigth-note");
-              Console.Beep(1000, 500);
+              Console.Beep(1000, baseBeatLen/8);
               Thread.Sleep(1000);
               //Console.Beep(0,500);
             }
