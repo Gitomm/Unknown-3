@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 namespace BeatController
 {
   class BeatController
@@ -28,23 +29,25 @@ namespace BeatController
     */
     public static void Main(string[] args)
     {
-      AssignBeat();
 
       while (true)
       {
+        AssignBeat();
         switch (a)
         {
           case 1:
           Console.WriteLine("That was a whole-note");
           Console.Beep(1000, 4000);
-          Console.Beep(0,500);
+          Thread.Sleep(1000);
+          //Console.Beep(0,500);
           break;
           case 2:
             for (int i = 0; i < 2; i = i + 1)
             {
               Console.WriteLine("That was a half-note");
               Console.Beep(1000, 2000);
-              Console.Beep(0,500);
+              Thread.Sleep(1000);
+              //Console.Beep(0,500);
             }
           break;
           case 3:
@@ -52,7 +55,8 @@ namespace BeatController
             {
               Console.WriteLine("That was a fourth-note");
               Console.Beep(1000, 1000);
-              Console.Beep(0,500);
+              Thread.Sleep(1000);
+              //Console.Beep(0,500);
             }
           break;
           case 4:
@@ -60,7 +64,8 @@ namespace BeatController
             {
               Console.WriteLine("That was an eigth-note");
               Console.Beep(1000, 500);
-              Console.Beep(0,500);
+              Thread.Sleep(1000);
+              //Console.Beep(0,500);
             }
           break;
         }
