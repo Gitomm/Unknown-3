@@ -17,6 +17,50 @@ namespace UnknownEng
 		}
 	}
 
+	public abstract class Entity
+	{
+		private int x;
+		private int y;
+
+		public int getX()
+    {
+      return x;
+    }
+
+    public int getY()
+    {
+      return y;
+    }
+
+    public void setX(int nx)
+    {
+      x = nx;
+    }
+
+    public void setY(int ny)
+    {
+      y = ny;
+    }
+	}
+
+	public class FVect
+	{
+		private int dx;
+		private int dy;
+
+		public FVect(int dx, int dy)
+		{
+			this.dx = dx;
+			this.dy = dy;
+		}
+
+		public void applyV(Entity e)
+		{
+			e.setX(e.getX() + dx);
+			e.setY(e.getY() + dy);
+		}
+	}
+
 	public class Renderer : Form
 	{
 		public Bitmap tim;

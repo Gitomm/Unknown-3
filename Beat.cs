@@ -1,28 +1,37 @@
 using System;
 using System.IO;
-using System.drawing;
-public class Beat
+using System.Drawing;
+using UnknownEng;
+
+//Extends Entity for FVect implementation
+public class Beat : Entity
 {
     private static System.Timers.Timer aTimer, bTimer;
-    private int x
-    private int y
-    private BitMap(string s, int x, int y)
+    private int x;
+    private int y;
+    //Image of the beat
+    private Bitmap beatImg;
+    public Beat(string s, int x, int y)
     {
-      this.s = s
-      this.x = x
-      this.y = y
+      //s is used to declare the URL of the image of the beat
+      beatImg = new Bitmap(s);
+      this.x = x;
+      this.y = y;
     }
+
     static void Main(string[] args)
     {
-        int m = new int
+        int m;
         m = 1;
-        int b = new Random(32);
+        Random _r = new Random(32);
+        //Had int b assigned to a new Random Object with seed 32 previously; Now Random object _r is declared with seed 32, b is set to a random int between 0 and 32
+        int b = _r.Next(0,32);
 
         for (int i = 1; i < 4; i = i + 1)
         {
           aTimer = new System.Timers.Timer();
-          aTimer
-          display.thingbeat(_R)
+          // what is this tenshi(all you wrote was aTimer) -> aTimer
+          //Idk what the point of this is either -> display.thingbeat(_R);
         }
 /*
         for (int i = 1; i < 100; i = i + 1)
