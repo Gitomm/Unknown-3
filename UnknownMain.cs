@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using System.Drawing;
 using UnknownEng;
 using System.Media;
+using BeatControllerN;
+using BeatN;
 
 namespace UnknownMain
 {
@@ -14,6 +16,7 @@ namespace UnknownMain
         private SoundPlayer p;
         public int health;
         private SolidBrush b;
+        private BeatController bc;
         public UM()
         {
           this.Size = new Size(1440, 960);
@@ -21,6 +24,7 @@ namespace UnknownMain
           health = 50;
           b = new SolidBrush(Color.Green);
           p = new SoundPlayer();
+          bc = new BeatController();
           try
           {
             bg = new Bitmap("bg.bmp");
@@ -33,13 +37,27 @@ namespace UnknownMain
 
         public override void run()
         {
-          this.PlaySong();
-          this.drawHealth();
+          while(true)
+          {
+            this.PlaySong();
+            this.drawHealth();
+            foreach (Beat b in bc.beatList)
+            {
+              drawBeat(b);
+            }
+            bc.run();
+            BeatController.fTime = false;
+          }
         }
 
         private void drawHealth()
         {
           g.FillRectangle(b, 512, 256, health*8, 64);
+        }
+
+        private void drawBeat(Beat b)
+        {
+          g.FillRectangle(new SolidBrush(b.getColor()), b.getX(), b.getY(), 64, 256);
         }
 
         private void PlaySong()
@@ -56,6 +74,15 @@ namespace UnknownMain
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
           Console.WriteLine("KeyPressed");
+          if (bc.beatList[0].cLife() < 300 && bc.beatList[0].cLife() > 0)
+          {
+            Console.WriteLine("Good hit");
+          }
+          else
+          {
+            health -= 10;
+            Console.WriteLine("Bad hit");
+          }
         }
 
     }
