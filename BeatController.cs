@@ -5,72 +5,81 @@ namespace BeatController
   class BeatController
   {
     static int a;
-    static int b;
     private static int baseBeatLen = 460;
-    //static double Note;
+    private static int beepHertz = 1000;
+    private static int sleepInterval = 1000;
     static void AssignBeat()
     {
       Random _r = new Random();
-      a = _r.Next(1,4);
-      /*
-      b = a;
-      Console.WriteLine("The Beats are " + a*b);
-      Console.WriteLine(a);
-      Console.WriteLine(b);
-      */
-    }
-    /*
-    static void BeatTransition()
-    {
-      if (Note < 5000)
+      if (Counter = 0 || Counter = 8)
       {
-        Note =
+        Counter = 0;
+        a = _r.Next(1,5); //Next(1,4) may mean whole numbers up to 4 but not 4.
+      }
+      else
+      {
+        switch (Counter)
+        {
+          case 1:
+            a = _r.Next(2,5);
+          break;
+          case 2:
+            a = _r.Next(2,5);
+          break;
+          case 3:
+            a = _r.Next(2,5);
+          break;
+          case 4:
+            a = _r.Next(3,5);
+          break;
+          case 5:
+            a = _r.Next(3,5);
+          break;
+          case 6:
+            a = _r.Next(3,5);
+          break;
+          case 7:
+            a = 4;
+          break;
+        }
       }
     }
-    */
     public static void Main(string[] args)
     {
 
-      while (true)
-      {
+      int Counter = 0;
         AssignBeat();
         switch (a)
         {
           case 1:
-          Console.WriteLine("That was a whole-note");
-          Console.Beep(1000, baseBeatLen);
-          Thread.Sleep(1000);
-          //Console.Beep(0,500);
+            Console.WriteLine("That was a whole-note");
+            Console.Beep(beepHertz, baseBeatLen);
+            Thread.Sleep(sleepInterval);
+            Counter = Counter + 8;
+            //Console.Beep(0,500);
           break;
           case 2:
-            for (int i = 0; i < 2; i = i + 1)
-            {
-              Console.WriteLine("That was a half-note");
-              Console.Beep(1000, baseBeatLen/2);
-              Thread.Sleep(1000);
-              //Console.Beep(0,500);
-            }
+            Console.WriteLine("That was a half-note");
+            Console.Beep(beepHertz, baseBeatLen/2);
+            Thread.Sleep(sleepInterval);
+            Counter = Counter + 4;
+            //Console.Beep(0,500);
           break;
           case 3:
-            for (int i = 0; i < 4; i = i + 1)
-            {
-              Console.WriteLine("That was a fourth-note");
-              Console.Beep(1000, baseBeatLen/4);
-              Thread.Sleep(1000);
-              //Console.Beep(0,500);
-            }
+            Console.WriteLine("That was a fourth-note");
+            Console.Beep(beepHertz, baseBeatLen/4);
+            Thread.Sleep(sleepInterval);
+            Counter = Counter + 2;
+            //Console.Beep(0,500);
           break;
           case 4:
-            for (int i = 0; i < 4; i = i + 1)
-            {
-              Console.WriteLine("That was an eigth-note");
-              Console.Beep(1000, baseBeatLen/8);
-              Thread.Sleep(1000);
-              //Console.Beep(0,500);
-            }
+            Console.WriteLine("That was an eigth-note");
+            Console.Beep(beepHertz, baseBeatLen/8);
+            Thread.Sleep(sleepInterval);
+            Counter = Counter + 1;
+            //Console.Beep(0,500);
           break;
         }
-      }
     }
   }
 }
