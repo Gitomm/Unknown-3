@@ -19,11 +19,16 @@ public class Beat : Entity
       stp = new Stopwatch();
     }
 
-    public void cLife()
+    public int cLife()
     {
       if (stp.ElapsedMilliseconds == len)
       {
         this = null;
+        return 0;
+      }
+      else
+      {
+        return stp.ElapsedMilliseconds - len;
       }
     }
 }
