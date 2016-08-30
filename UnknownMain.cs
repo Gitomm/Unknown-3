@@ -12,10 +12,14 @@ namespace UnknownMain
         public Bitmap bg;
         private Graphics g;
         private SoundPlayer p;
+        public int health;
+        private SolidBrush b;
         public UM()
         {
           this.Size = new Size(1440, 960);
           this.g = this.CreateGraphics();
+          health = 50;
+          b = new SolidBrush(Color.Green);
           p = new SoundPlayer();
           try
           {
@@ -26,9 +30,16 @@ namespace UnknownMain
             Console.WriteLine("Error reading bg image");
           }
         }
+
         public override void run()
         {
           this.PlaySong();
+          this.drawHealth();
+        }
+
+        private void drawHealth()
+        {
+          g.FillRectangle(b, 512, 256, health*8, 64);
         }
 
         private void PlaySong()
@@ -46,6 +57,7 @@ namespace UnknownMain
         {
           Console.WriteLine("KeyPressed");
         }
+
     }
 
     public class temp
