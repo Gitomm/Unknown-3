@@ -30,8 +30,10 @@ namespace BeatControllerN
       if (st.ElapsedMilliseconds >= 200 || fTime)
       {
         Console.WriteLine("Bool");
-        Console.WriteLine(st.toString());
+        Console.WriteLine(st.ElapsedMilliseconds);
         Console.WriteLine("Bork");
+        //st.Restart();
+        //Console.WriteLine(st.ElapsedMilliseconds);
         Random _r = new Random();
         fTime = false;
         if (Counter == 0 || Counter == 8)
@@ -49,36 +51,43 @@ namespace BeatControllerN
           switch (Counter)
           {
             case 1:
+            Console.WriteLine("1");
               a = _r.Next(2,5);
               beatList.Add(new Beat(1060, 16, baseBeatLen/a));
               st.Restart();
             break;
             case 2:
+            Console.WriteLine("2");
               a = _r.Next(2,5);
               beatList.Add(new Beat(1060, 16, baseBeatLen/a));
               st.Restart();
             break;
             case 3:
+            Console.WriteLine("3");
               a = _r.Next(2,5);
               beatList.Add(new Beat(1060, 16, baseBeatLen/a));
               st.Restart();
             break;
             case 4:
+            Console.WriteLine("4");
               a = _r.Next(3,5);
               beatList.Add(new Beat(1060, 16, baseBeatLen/a));
               st.Restart();
             break;
             case 5:
+            Console.WriteLine("5");
               a = _r.Next(3,5);
               beatList.Add(new Beat(1060, 16, baseBeatLen/a));
               st.Restart();
             break;
             case 6:
+            Console.WriteLine("6");
               a = _r.Next(3,5);
               beatList.Add(new Beat(1060, 16, baseBeatLen/a));
               st.Restart();
             break;
             case 7:
+            Console.WriteLine("7");
               a = 4;
               beatList.Add(new Beat(1060, 16, baseBeatLen/a));
               st.Restart();

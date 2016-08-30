@@ -6,6 +6,7 @@ using UnknownEng;
 using System.Media;
 using BeatControllerN;
 using BeatN;
+using System.Threading;
 
 namespace UnknownMain
 {
@@ -46,6 +47,7 @@ namespace UnknownMain
               drawBeat(b);
             }
             bc.run();
+            Thread.Sleep(100);
             BeatController.fTime = false;
           }
         }
