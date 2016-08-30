@@ -5,13 +5,14 @@ namespace BeatController
   class BeatController
   {
     static int a;
+    static int Counter;
     private static int baseBeatLen = 460;
     private static int beepHertz = 1000;
     private static int sleepInterval = 1000;
     static void AssignBeat()
     {
       Random _r = new Random();
-      if (Counter = 0 || Counter = 8)
+      if (Counter == 0 || Counter == 8)
       {
         Counter = 0;
         a = _r.Next(1,5); //Next(1,4) may mean whole numbers up to 4 but not 4.
@@ -46,8 +47,6 @@ namespace BeatController
     }
     public static void Main(string[] args)
     {
-
-      int Counter = 0;
         AssignBeat();
         switch (a)
         {
